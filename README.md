@@ -1,23 +1,40 @@
 # Blockchain_arena_SoC_2025
 
-## P2P Network Generator 
+**Name:** Aadeshveer Singh  
+**Roll no:** 24B0926  
+**github id:** Aadeshveer 
 
-This project implements a program to generate and visualize a connected P2P network with specific peer degree constraints, as per Assignment 1 of the "Blockchain Arena: Simulating Mining Wars and Network Attacks" project.
+## P2P Network Generator - Assignment 1
+
+This project implements a program to generate and visualize a connected Peer-to-Peer (P2P) network with specific peer degree constraints (each peer connected to 3-6 other peers, with the total number of peers between 50 and 100). This work is part of Assignment 1 for the "Blockchain Arena: Simulating Mining Wars and Network Attacks" project.
 
 ## How to Run
-1.  Clone the repository.
-2.  Ensure Python 3 is installed along with the required libraries:
+
+1.  **Prerequisites:**
+    *   Python 3.x
+    *   Required libraries: `numpy`, `networkx`, `matplotlib`
+2.  **Clone the Repository:**
+    ```bash
+    git clone https://github.com/Aadeshveer/Blockchain_arena_SoC_2025.git
+    cd Blockchain_arena_SoC_2025
+    ```
+3.  **Install Dependencies:**
     ```bash
     pip install numpy networkx matplotlib
     ```
-3.  Execute the main script:
+4.  **Execute the Script:**
     ```bash
-    python main.py 
+    python3 main.py 
     ```
-4.  The generated network graph will be saved as `network.png`.
+5.  **Output:**
+    *   The script will print degree validation messages and a degree distribution summary to the console.
+    *   The generated network graph will be saved as `network.png` in the root of the project directory.
 
 ## Key Features
-- Generates a random P2P network (50-100 peers).
-- Enforces peer degree constraints (3-6 connections).
-- Ensures the entire network is connected using BFS/DFS.
-- Visualizes the network.
+
+-   **Random Network Generation:** Creates a P2P network with a random number of peers (50-100).
+-   **Degree Constraints:** Enforces that each peer has a degree between 3 and 6 (inclusive).
+-   **Guaranteed Connectivity:** Ensures the entire network is a single connected component (verified using NetworkX's `is_connected`, which typically uses BFS/DFS).
+-   **Validation & Regeneration:** If the generated graph does not meet all constraints (connectivity or degree), it is discarded, and a new graph is generated until a valid one is produced.
+-   **Visualization:** Outputs a visual representation of the generated network graph.
+-   **Degree Distribution:** Prints a summary of the degree distribution of the final valid network.
