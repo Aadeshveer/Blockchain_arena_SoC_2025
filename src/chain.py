@@ -123,3 +123,4 @@ class BlockTree:
             node_color=cmap,
         )
         plt.savefig(result_folder+f'/blockchain{int(time/20000)}.png')
+        plt.close()

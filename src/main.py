@@ -1,9 +1,10 @@
 import sys
 import queue
 import enum
+import os
 from network import Network
 from chain import Block, Transaction
-from peer import Peer
+from peer import Peer, CPUPower, NetworkSpeed
 
 min_num_peers = 50
 max_num_peers = 100
@@ -38,8 +39,9 @@ class DiscreteEventSimulator:
         num_peers: int,
         slow_network_perc: int,
         low_cpu_perc: int,
-        interval,
-        transaction_mean
+        interval: int,
+        transaction_mean: int,
+        logging: bool,
     ) -> None:
         self.num_peers: int = num_peers
         self.network: Network = Network(
@@ -49,10 +51,22 @@ class DiscreteEventSimulator:
             interval,
             transaction_mean,
         )
+        self.logging = logging
         self.interval = interval
         self.transaction_mean = transaction_mean
         self.time: int = 0
         self.event_queue = queue.Queue()
+        self.result_folder_name = f'results_{self.interval}_{self.transaction_mean}'  # Noqa:E501
+        if not os.path.exists(self.result_folder_name):
+            os.mkdir(self.result_folder_name)
+
+        if self.logging:
+            self.log_filename = self.result_folder_name+'/log.csv'
+            header = 'SimTime,ScheduledEventTime,EventType,PeerID,HighCPUPower,FastNetwork,MessageType,MessageID,MessageCreator,MessageTxCount\n'  # Noqa:E501
+            self.log = ''
+
+            with open(self.log_filename, 'w', newline='') as f:
+                f.write(header)
 
         self.network.draw()
 
@@ -64,6 +78,10 @@ class DiscreteEventSimulator:
                     self.time,
                     f'results_{self.interval}_{self.transaction_mean}'
                 )
+            if self.time % 200 == 0:
+                with open(self.log_filename, 'a') as f:
+                    f.write(self.log)
+                    self.log = ''
             if self.time >= 200000:
                 break
             future_event_queue = queue.Queue()
@@ -71,14 +89,14 @@ class DiscreteEventSimulator:
                 peer: Peer
                 block: None | Block = peer.validate_block_operation()
                 if block is not None:
-                    self.event_queue.put(
+                    self.add_event_to_queue(
                         Event(EventType.BLOCK_SEND, peer, block, self.time)
                     )
                 transaction = peer.validate_transaction_operation(
                     self.num_peers
                 )
                 if transaction is not None:
-                    self.event_queue.put(
+                    self.add_event_to_queue(
                         Event(
                             EventType.TRANSACTION_SEND,
                             peer,
@@ -96,7 +114,7 @@ class DiscreteEventSimulator:
                         case EventType.BLOCK_RECIEVE:
                             if event.message.ID not in event.peer.read_block_IDs:  # Noqa:E501
                                 if event.peer.add_block(event.message):
-                                    self.event_queue.put(
+                                    self.add_event_to_queue(
                                         Event(
                                             EventType.BLOCK_SEND,
                                             event.peer,
@@ -126,7 +144,7 @@ class DiscreteEventSimulator:
         if transaction.ID not in peer.read_transaction_IDs:
             peer.read_transaction_IDs.add(transaction.ID)
             peer.to_process_transactions.append(transaction)
-            self.event_queue.put(
+            self.add_event_to_queue(
                 Event(
                     EventType.TRANSACTION_SEND,
                     peer,
@@ -141,7 +159,7 @@ class DiscreteEventSimulator:
                 (peer, reciever),
                 1
             ))
-            self.event_queue.put(
+            self.add_event_to_queue(
                 Event(
                     EventType.TRANSACTION_RECIEVE,
                     reciever,
@@ -157,7 +175,7 @@ class DiscreteEventSimulator:
                 (peer, reciever),
                 message_size,
             ))
-            self.event_queue.put(
+            self.add_event_to_queue(
                 Event(
                     EventType.BLOCK_RECIEVE,
                     reciever,
@@ -166,17 +184,71 @@ class DiscreteEventSimulator:
                 )
             )
 
+    def add_event_to_queue(self, event: Event) -> None:
+        self.event_queue.put(
+            event
+        )
+        if self.logging:
+            self.log += log_formatting(
+                event,
+                self.time,
+            )
 
-def take_input() -> tuple[int, int, int, int, int]:
+
+def log_formatting(event: Event, time: int) -> str:
+    log = ''
+    log += str(time)
+    log += ','
+    log += str(event.time)
+    log += ','
+    match event.event_type:
+        case EventType.BLOCK_RECIEVE:
+            log += 'block_recieve'
+        case EventType.BLOCK_SEND:
+            log += 'block_send'
+        case EventType.TRANSACTION_RECIEVE:
+            log += 'transaction_recieve'
+        case EventType.TRANSACTION_SEND:
+            log += 'transaction_recieve'
+    log += ','
+    log += str(event.peer)
+    log += ','
+    if event.peer.cpu_power == CPUPower.HIGH:
+        log += str(1)
+    else:
+        log += str(0)
+    log += ','
+    if event.peer.network_speed == NetworkSpeed.FAST:
+        log += str(1)
+    else:
+        log += str(0)
+    log += ','
+    log += str(type(event.message))
+    log += ','
+    log += str(event.message.ID)
+    log += ','
+    if type(event.message) is Block:
+        log += str(event.message.creator)
+    elif type(event.message) is Transaction:
+        log += str(event.message.sender_ID)
+    if type(event.message) is Block:
+        log += str(len(event.message.transaction_list))
+    else:
+        log += str(1)
+    return log+'\n'
+
+
+def take_input() -> tuple[int, int, int, int, int, bool]:
     try:
-        num_peers, slow_network_perc, low_cpu_perc, interval, transaction_mean = sys.argv[1:]  # Noqa:E501
+        num_peers, slow_network_perc, low_cpu_perc, interval, transaction_mean, logging = sys.argv[1:]  # Noqa:E501
     except ValueError:
         print('''Usage: python3 main.py arg1 arg2 arg3 arg4
     arg1 : number of peers in network
     arg2 : percentage of peers with slow network
     arg3 : percentage of peers with low CPU power
     arg4 : mean interval for block mining
-    arg5 : mean interval for transaction mining''')
+    arg5 : mean interval for transaction mining
+    arg6 : logging(T/F)''')
         sys.exit()
 
     try:
@@ -185,6 +257,7 @@ def take_input() -> tuple[int, int, int, int, int]:
         low_cpu_perc = int(low_cpu_perc)
         interval = int(interval)
         transaction_mean = int(transaction_mean)
+        logging = logging.upper()
     except ValueError:
         print('Error: Command line arguments must be integers')
         sys.exit()
@@ -209,12 +282,22 @@ def take_input() -> tuple[int, int, int, int, int]:
         print('Error: Command line argument 5 (mean transaction interval time) must be positive')  # Noqa:E501
         sys.exit()
 
+    match logging:
+        case 'T':
+            logging = True
+        case 'F':
+            logging = False
+        case _:
+            print('Error: Command line argument 6 (logging(T/F)) must be either \'T\' or \'F\'')  # Noqa:E501
+            sys.exit()
+
     return (
         num_peers,
         slow_network_perc,
         low_cpu_perc,
         interval,
         transaction_mean,
+        logging,
     )
 
 
