@@ -91,7 +91,8 @@ The simulator is implemented in Python and leverages the `networkx` library for 
     ```bash
     python3 src/main.py 80 50 50 60 10
     ```
-    This will run a simulation with 80 peers, 50% having slow network, 50% having low CPU, and a target mean block interval of 60 (scaled by `SCALE=10` in simulation ticks for mining).
+    This will run a simulation with 80 peers, 50% having slow network, 50% having low CPU, and a target mean block interval of 60 (scaled by `SCALE=10` in simulation ticks for mining).  
+    **Note:** More hyperparameters can be changed by altering settings.py and running again.
 
 4.  **Output:**
     *   The script will print "Checking degree" messages during initial P2P network generation.

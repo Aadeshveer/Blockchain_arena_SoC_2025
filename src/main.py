@@ -5,9 +5,7 @@ import os
 from network import Network
 from chain import Block, Transaction
 from peer import Peer, CPUPower, NetworkSpeed
-
-min_num_peers = 50
-max_num_peers = 100
+from settings import MAX_TIME_STEPS, max_num_peers, min_num_peers
 
 
 class EventType(enum.Enum):
@@ -71,18 +69,22 @@ class DiscreteEventSimulator:
         self.network.draw()
 
     def run_simulation(self) -> None:
+        plot_idx: int = 0
         while True:
-            if self.time % 20000 == 0:
-                print(f'Processing for time {self.time}')
+            if self.time % (MAX_TIME_STEPS/10) == 0:
+                print(f'Processing for time {self.time}/{MAX_TIME_STEPS}')
                 list(self.network.graph.nodes())[0].block_tree.draw(
                     self.time,
-                    f'results_{self.interval}_{self.transaction_mean}'
+                    f'results_{self.interval}_{self.transaction_mean}',
+                    plot_idx
                 )
-            if self.time % 200 == 0:
-                with open(self.log_filename, 'a') as f:
-                    f.write(self.log)
-                    self.log = ''
-            if self.time >= 200000:
+                plot_idx += 1
+            if self.logging:
+                if self.time % 200 == 0:
+                    with open(self.log_filename, 'a') as f:
+                        f.write(self.log)
+                        self.log = ''
+            if self.time >= MAX_TIME_STEPS:
                 break
             future_event_queue = queue.Queue()
             for peer in self.network.graph.nodes():

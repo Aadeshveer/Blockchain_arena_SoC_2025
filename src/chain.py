@@ -2,8 +2,7 @@ from collections import deque
 import matplotlib.pyplot as plt
 import networkx as nx
 import copy
-
-SCALE = 10
+from settings import SCALE
 
 
 class Transaction:
@@ -94,7 +93,7 @@ class BlockTree:
                 return False
         return True
 
-    def draw(self, time: int, result_folder: str) -> None:
+    def draw(self, time: int, result_folder: str, plot_idx: int) -> None:
         graph = nx.Graph()
         cmap = []
         for node in self.node_list:
@@ -122,5 +121,5 @@ class BlockTree:
             font_size=max(8-int(graph.number_of_nodes()/15), 4),
             node_color=cmap,
         )
-        plt.savefig(result_folder+f'/blockchain{int(time/20000)}.png')
+        plt.savefig(result_folder+f'/blockchain{plot_idx}.png')
         plt.close()

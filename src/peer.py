@@ -2,10 +2,7 @@ import enum
 from chain import Block, BlockTree, Transaction
 import numpy
 import random
-
-MINING_FEE = 50
-MEAN_TIME = 1
-SCALE = 10
+from settings import SCALE, MINING_FEE
 
 
 class CPUPower(enum.Enum):

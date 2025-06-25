@@ -6,10 +6,7 @@ import random
 import enum
 from peer import Peer, CPUPower, NetworkSpeed
 from chain import Block
-
-min_degree = 3
-max_degree = 6
-SCALE = 10
+from settings import SCALE, max_degree, min_degree
 
 
 class LatencyTerms(enum.Enum):
