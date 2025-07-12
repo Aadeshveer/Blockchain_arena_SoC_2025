@@ -189,38 +189,47 @@ async function load_all_items() {
     loading_items_message.style.display = 'block';
     item_list.innerHTML = '';
     try {
-        itemFilter = contract.filters.ItemRegistered();
-        pastEvents = await contract.queryFilter(itemFilter, 0, 'latest');
-        if(pastEvents.length === 0) {
-             loading_items_message.innerText = "No items registered yet.";
-        } else {
-            loading_items_message.style.display = 'none';
-            for (even of pastEvents) {
-                add_item_to_list(even.args.id, even.args.owner, even.args.name);
+        const registerFilter = contract.filters.ItemRegistered();
+        const transferFilter = contract.filters.OwnershipTransferred();
+        const burnFilter = contract.filters.ItemBurnt();
+
+        const [registerEvents, transferEvents, burnEvents] = await Promise.all([
+            contract.queryFilter(registerFilter, 0, 'latest'),
+            contract.queryFilter(transferFilter, 0, 'latest'),
+            contract.queryFilter(burnFilter, 0, 'latest')
+        ]);
+        const burntItemIds = new Set(burnEvents.map(event => event.args.id.toString()));
+        const currentOwners = new Map();
+        for (const event of registerEvents) {
+            currentOwners.set(event.args.id.toString(), event.args.owner);
+        }
+
+        for (const event of transferEvents) {
+            currentOwners.set(event.args.id.toString(), event.args.to);
+        }
+        let activeItemCount = 0;
+        for (const event of registerEvents) {
+            const idString = event.args.id.toString();
+
+            if (!burntItemIds.has(idString)) {
+                const itemName = event.args.name;
+                const currentOwner = currentOwners.get(idString);
+                
+                add_item_to_list(event.args.id, currentOwner, itemName);
+                activeItemCount++;
             }
         }
+
+        if (activeItemCount === 0) {
+             loading_items_message.innerText = "No active items registered yet.";
+        } else {
+             loading_items_message.style.display = 'none';
+        }
+
     } catch (error) {
-        // console.error("unable to fetch item ", error);
+        console.error("Unable to fetch items: ", error);
         loading_items_message.innerText = "Error loading items.";
     }
-}
-
-function listen_for_events() {
-    contract.on("ItemRegistered", (id, owner, name) => {
-        loading_items_message.style.display = 'none';
-        add_item_to_list(id, owner, name);
-    });
-    contract.on("OwnershipTransferred", (id, from, to) => {
-        alert(`${id.toString()} transferred from ${from} to ${to}`);
-        load_all_items();
-    });
-    contract.on("ItemBurnt", (id) => {
-        console.log(`ItemBurnt event received for ID: ${id.toString()}`);
-        const itemElement = document.getElementById(`item-${id.toString()}`);
-        if (itemElement) {
-            itemElement.remove();
-        }
-    });
 }
 
 async function add_item_to_list(id, owner, name) {
@@ -232,11 +241,11 @@ async function add_item_to_list(id, owner, name) {
         <div class="item-actions">
             <div class="transfer-form">
                 <input type="text" placeholder="New owner address (0x...)" id="transfer-input-${id.toString()}">
-                <button class="action-button" onclick="transferItem('${id.toString()}')">Transfer</button>
+                <button class="action-button" onclick="transfer_item('${id.toString()}')">Transfer</button>
             </div>
             <div>
                 <button class="action-button" onclick="view_provenance('${id.toString()}')">View History</button>
-                <button class="burn-button" onclick="burnItem('${id.toString()}')">Burn Item</button>
+                <button class="burn-button" onclick="burn_item('${id.toString()}')">Burn Item</button>
             </div>
         </div>
     `;
@@ -312,7 +321,7 @@ async function view_provenance(idString) {
     }
 }
 
-async function burnItem(idString) {
+async function burn_item(idString) {
     try {
         const tx = await contract.burnItem(idString);
         alert(`Burning Item #${idString}.`);
