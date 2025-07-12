@@ -159,7 +159,7 @@ A web interface was built to interact with the deployed smart contract. Which ca
     *   Some Sepolia test ETH (available from a public faucet).
 2.  **Running the Frontend:**
     *   Clone the repository.
-    *   Open the `src/dapp/index.html` file in your web browser.
+    *   Open the `src/dapp/index.html` file in your web browser, using a local server.
 3.  **Interact with the Deployed Contract:**
     *   **Deployed Contract Address (Sepolia):** `0x3E364004145956Dac1760c5A15FE78fb8E3f6872`
     *   **Contract on Etherscan:** `https://sepolia.etherscan.io/address/0x3E364004145956Dac1760c5A15FE78fb8E3f6872`
