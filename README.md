@@ -138,7 +138,7 @@ A Solidity smart contract was written to serve as the backend logic.
 *   **Security:** Functions include `require` statements to enforce access control (e.g., only the owner can transfer or burn an item).
 
 ### Frontend (`index.html`, `style.css`, `script.js`)
-A web interface was built to interact with the deployed smart contract.
+A web interface was built to interact with the deployed smart contract. Which can be seen in figure 3.
 *   **Technology:** Simple HTML and CSS for structure and styling, with JavaScript and the `ethers.js` library for blockchain interaction.
 *   **Features:**
     1.  **Wallet Connection:** A button allows users to connect their MetaMask wallet.
@@ -147,6 +147,9 @@ A web interface was built to interact with the deployed smart contract.
     4.  **Ownership Transfer:** An interface for the current owner of an item to transfer it to a new address.
     5.  **Provenance Viewing:** A feature to view the complete ownership history of any item by fetching and displaying all `OwnershipTransferred` and `ItemRegistered` events associated with its ID.
     6.  **Burning:** A button for the owner to burn their item.
+
+![Screenshot of DApp](images/Dapp_screenshot.png)
+*Figure 3: A screenshot of Dapp*
 
 ## 2.3. How to Use the DApp
 
