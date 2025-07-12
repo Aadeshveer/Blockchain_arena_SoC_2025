@@ -252,7 +252,7 @@ async function register_item() {
     }
 
     try {
-        tx = await contract.register_item(item_name, item_data);
+        tx = await contract.registerItem(item_name, item_data);
         alert(`Registering "${item_name}"`);
         await tx.wait();
         alert(`Successfully registered "${item_name}"`);
