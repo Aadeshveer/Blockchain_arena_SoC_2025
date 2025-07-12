@@ -1,0 +1,1884 @@
+# Project Summary for: Blockchain_arena_SoC_2025
+# Generated on: Sat Jul 12 14:37:48 +08 2025
+
+-------------------------------------------------
+
+### 1. Project File Structure
+```
+.
+├── README.md
+├── images
+│   └── Dapp_screenshot.png
+├── package-lock.json
+├── package.json
+├── results
+│   ├── results_100_1
+│   │   ├── blockchain0.png
+│   │   ├── blockchain1.png
+│   │   ├── blockchain10.png
+│   │   ├── blockchain2.png
+│   │   ├── blockchain3.png
+│   │   ├── blockchain4.png
+│   │   ├── blockchain5.png
+│   │   ├── blockchain6.png
+│   │   ├── blockchain7.png
+│   │   ├── blockchain8.png
+│   │   ├── blockchain9.png
+│   │   └── network.png
+│   ├── results_100_10
+│   │   ├── blockchain0.png
+│   │   ├── blockchain1.png
+│   │   ├── blockchain10.png
+│   │   ├── blockchain2.png
+│   │   ├── blockchain3.png
+│   │   ├── blockchain4.png
+│   │   ├── blockchain5.png
+│   │   ├── blockchain6.png
+│   │   ├── blockchain7.png
+│   │   ├── blockchain8.png
+│   │   ├── blockchain9.png
+│   │   └── network.png
+│   ├── results_100_5
+│   │   ├── blockchain0.png
+│   │   ├── blockchain1.png
+│   │   ├── blockchain10.png
+│   │   ├── blockchain2.png
+│   │   ├── blockchain3.png
+│   │   ├── blockchain4.png
+│   │   ├── blockchain5.png
+│   │   ├── blockchain6.png
+│   │   ├── blockchain7.png
+│   │   ├── blockchain8.png
+│   │   ├── blockchain9.png
+│   │   └── network.png
+│   ├── results_10_1
+│   │   ├── blockchain0.png
+│   │   ├── blockchain1.png
+│   │   ├── blockchain10.png
+│   │   ├── blockchain2.png
+│   │   ├── blockchain3.png
+│   │   ├── blockchain4.png
+│   │   ├── blockchain5.png
+│   │   ├── blockchain6.png
+│   │   ├── blockchain7.png
+│   │   ├── blockchain8.png
+│   │   ├── blockchain9.png
+│   │   └── network.png
+│   ├── results_10_10
+│   │   ├── blockchain0.png
+│   │   ├── blockchain1.png
+│   │   ├── blockchain10.png
+│   │   ├── blockchain2.png
+│   │   ├── blockchain3.png
+│   │   ├── blockchain4.png
+│   │   ├── blockchain5.png
+│   │   ├── blockchain6.png
+│   │   ├── blockchain7.png
+│   │   ├── blockchain8.png
+│   │   ├── blockchain9.png
+│   │   └── network.png
+│   ├── results_10_5
+│   │   ├── blockchain0.png
+│   │   ├── blockchain1.png
+│   │   ├── blockchain10.png
+│   │   ├── blockchain2.png
+│   │   ├── blockchain3.png
+│   │   ├── blockchain4.png
+│   │   ├── blockchain5.png
+│   │   ├── blockchain6.png
+│   │   ├── blockchain7.png
+│   │   ├── blockchain8.png
+│   │   ├── blockchain9.png
+│   │   └── network.png
+│   ├── results_50_1
+│   │   ├── blockchain0.png
+│   │   ├── blockchain1.png
+│   │   ├── blockchain10.png
+│   │   ├── blockchain2.png
+│   │   ├── blockchain3.png
+│   │   ├── blockchain4.png
+│   │   ├── blockchain5.png
+│   │   ├── blockchain6.png
+│   │   ├── blockchain7.png
+│   │   ├── blockchain8.png
+│   │   ├── blockchain9.png
+│   │   └── network.png
+│   ├── results_50_10
+│   │   ├── blockchain0.png
+│   │   ├── blockchain1.png
+│   │   ├── blockchain10.png
+│   │   ├── blockchain2.png
+│   │   ├── blockchain3.png
+│   │   ├── blockchain4.png
+│   │   ├── blockchain5.png
+│   │   ├── blockchain6.png
+│   │   ├── blockchain7.png
+│   │   ├── blockchain8.png
+│   │   ├── blockchain9.png
+│   │   └── network.png
+│   ├── results_50_5
+│   │   ├── blockchain0.png
+│   │   ├── blockchain1.png
+│   │   ├── blockchain10.png
+│   │   ├── blockchain2.png
+│   │   ├── blockchain3.png
+│   │   ├── blockchain4.png
+│   │   ├── blockchain5.png
+│   │   ├── blockchain6.png
+│   │   ├── blockchain7.png
+│   │   ├── blockchain8.png
+│   │   ├── blockchain9.png
+│   │   └── network.png
+│   ├── results_5_1
+│   │   ├── blockchain0.png
+│   │   ├── blockchain1.png
+│   │   ├── blockchain10.png
+│   │   ├── blockchain2.png
+│   │   ├── blockchain3.png
+│   │   ├── blockchain4.png
+│   │   ├── blockchain5.png
+│   │   ├── blockchain6.png
+│   │   ├── blockchain7.png
+│   │   ├── blockchain8.png
+│   │   ├── blockchain9.png
+│   │   └── network.png
+│   ├── results_5_10
+│   │   ├── blockchain0.png
+│   │   ├── blockchain1.png
+│   │   ├── blockchain10.png
+│   │   ├── blockchain2.png
+│   │   ├── blockchain3.png
+│   │   ├── blockchain4.png
+│   │   ├── blockchain5.png
+│   │   ├── blockchain6.png
+│   │   ├── blockchain7.png
+│   │   ├── blockchain8.png
+│   │   ├── blockchain9.png
+│   │   └── network.png
+│   └── results_5_5
+│       ├── blockchain0.png
+│       ├── blockchain1.png
+│       ├── blockchain10.png
+│       ├── blockchain2.png
+│       ├── blockchain3.png
+│       ├── blockchain4.png
+│       ├── blockchain5.png
+│       ├── blockchain6.png
+│       ├── blockchain7.png
+│       ├── blockchain8.png
+│       ├── blockchain9.png
+│       └── network.png
+├── run.ps1
+├── run.sh
+└── src
+    ├── dapp
+    │   ├── Tracker.sol
+    │   ├── index.html
+    │   ├── script.js
+    │   └── style.css
+    └── simulator
+        ├── chain.py
+        ├── main.py
+        ├── network.py
+        ├── peer.py
+        └── settings.py
+
+18 directories, 159 files
+```
+
+
+
+### 2. File Contents
+
+--- FILE: ./.git ---
+```
+```
+
+--- FILE: ./.venv ---
+```
+```
+
+--- FILE: ./README.md ---
+```markdown
+# Blockchain Arena: Simulating Mining Wars and Building DApps
+### SoC 2025 Final Submission
+
+**Name:** Aadeshveer Singh  
+**Roll no:** 24B0926  
+**GitHub:** Aadeshveer  
+
+---
+
+## Project Overview
+
+This repository contains the complete body of work for the "Blockchain Arena: Simulating Mining Wars and Network Attacks" Summer of Code 2025 project. This project was a comprehensive exploration of blockchain technology, divided into two major parts:
+
+1.  **Part 1: A Discrete-Event Simulator for a Proof-of-Work (PoW) P2P Network.** This from-scratch implementation in Python models the dynamics of a cryptocurrency network, including peer heterogeneity, network latencies, block propagation, mining competition, and fork resolution. The goal was to build a foundational tool to study the emergent properties of decentralized consensus.
+
+2.  **Part 2: A Verifiable On-Chain Provenance Tracker DApp.** This full-stack decentralized application, built with Solidity and a web frontend, demonstrates practical smart contract development on the Ethereum blockchain. It creates a system for registering unique items and tracking their ownership history, similar to a Non-Fungible Token (NFT).
+
+This document serves as a final report, detailing the design, implementation, and results for both parts of the project.
+
+---
+
+# Part 1: P2P Cryptocurrency Network Simulator
+
+*(This part corresponds to Assignments 1 and 2 of the project.)*
+
+## 1.1. Simulator Objective
+
+The primary objective of this simulator is to model and study the fundamental dynamics of a Proof-of-Work based cryptocurrency network. By simulating key aspects like peer heterogeneity (CPU power and network speed), transaction and block propagation with realistic latencies, and competitive mining, the system allows for an in-depth analysis of emergent network behaviors such as blockchain forks, the "longest chain" rule, and overall network health under various conditions.
+
+## 1.2. System Design and Implementation
+
+The simulator is implemented in Python and leverages the `networkx` library for graph operations and `matplotlib` for visualization. The system is designed with a modular, object-oriented approach to manage complexity.
+
+### Core Components:
+
+*   **`Transaction` & `Block` (`src/simulator/chain.py`):** These classes represent the fundamental data structures. `Block` contains a creator ID, a reference to the previous block's ID, and a list of transactions. A coinbase transaction is added by the miner.
+*   **`TreeNode` & `BlockTree` (`src/simulator/chain.py`):** Each peer maintains its own view of the blockchain as a tree structure (`BlockTree`). This is crucial, as different peers can have temporarily different views of the "truth." The `BlockTree` class manages adding new blocks, validating transactions against the parent block's account state, finding the current longest chain, and visualizing this tree structure.
+*   **`Peer` (`src/simulator/peer.py`):** This class represents a node in the P2P network and encapsulates all individual decision-making logic. Each peer:
+    *   Is initialized with attributes for ID, CPU power (LOW/HIGH), and network speed (SLOW/FAST).
+    *   Maintains its own `BlockTree`, representing its local view of the blockchain.
+    *   Is assigned a `hashing_fraction` based on the global distribution of CPU power.
+    *   Generates new transactions periodically (based on a Poisson distribution) if it has a balance from mining rewards.
+    *   **Mines new blocks (Proof-of-Work):** A peer continuously works on mining a new block on top of the tip of its current longest chain. The time to mine a block is drawn from a Poisson distribution whose mean is inversely proportional to the peer's hashing fraction (`(target_block_interval * SCALE) / hashing_fraction_of_peer`).
+    *   **Switches Mining Target:** Critically, if a peer receives a new, valid block that makes a different chain longer than the one it's currently working on, it immediately abandons its current mining attempt and starts mining a new block on top of this new, longer chain. This models the core behavior of PoW consensus.
+*   **`Network` (`src/simmulator/network.py`):**
+    *   Initializes the P2P network topology using a custom generator that ensures a connected graph with specified peer counts (50-100) and degree constraints (3-6).
+    *   Assigns peer attributes and calculates message latencies based on propagation delay, link speed (100 Mbps vs. 5 Mbps), message size, and a Poisson-distributed queuing delay.
+*   **`Event` & `DiscreteEventSimulator` (`src/simulator/main.py`):**
+    *   The `Event` class provides a clear structure for events.
+    *   The `DiscreteEventSimulator` is the engine of the project. It manages a global simulation `time` and an event queue. In each time step, it processes events, and polls each peer to see if it has generated a new transaction or successfully mined a block. New `_SEND` events are created, which in turn schedule `_RECIEVE` events for neighbors based on calculated latencies. Upon receiving a message, a peer processes it and may generate new `_SEND` events to propagate the message further.
+
+## 1.3. How to Run the Simulation
+
+1.  **Prerequisites:**
+    *   Python 3.x
+    *   Required libraries: `numpy`, `networkx`, `matplotlib`, `scipy`
+        ```bash
+        pip install numpy networkx matplotlib scipy
+        ```
+2.  **Clone the Repository:**
+    ```bash
+    git clone https://github.com/Aadeshveer/Blockchain_arena_SoC_2025.git
+    cd Blockchain_arena_SoC_2025
+    ```
+3.  **Execution:**
+    The repository includes `run.ps1` (for Windows PowerShell) and `run.sh` (for Linux/macOS Bash) to automate running experiments with different parameters. To run a single simulation, use `src/main.py` from the command line:
+    ```bash
+    python3 src/simulator/main.py <num_peers> <slow_net_%> <low_cpu_%> <block_interval> <tx_interval> <logging(T/F)>
+    ```
+    **Example:**
+    ```bash
+    python3 src/simulator/main.py 80 50 50 60 10 F
+    ```
+    This command runs a simulation with 80 peers, 50% slow network, 50% low CPU, a target mean block interval of 60 seconds, a mean transaction generation interval of 10 seconds per peer, and logging turned off.
+
+## 1.4. Observations and Results from Simulation
+
+A series of experiments were conducted to observe the network's behavior under different conditions. A sample run is detailed below.
+
+*   **Parameters:** 80 Peers, 50% Slow Network, 50% Low CPU, Block Interval = 10s, Transaction Interval = 1s.
+*   **Simulation Duration:** 200,000 time steps.
+
+### P2P Network Topology
+The generated P2P network shows a connected graph with the specified peer heterogeneity. Node color indicates CPU power, outline thickness indicates network speed, and edge thickness indicates link capacity.
+
+![P2P Network Topology](results/results_10_1/network.png)
+*Figure 1: Sample P2P Network Topology generated for the simulation.*
+
+### Blockchain Tree Evolution and Forking
+The visualization of Peer 0's blockchain tree over time provides clear evidence of key blockchain dynamics: initial linear growth, the natural formation of forks due to concurrent block discovery, and fork resolution via the longest chain rule, where shorter branches become orphaned.
+
+![Initial Tree](results/results_10_1/blockchain0.png)
+*Figure 2.1: The initial Genesis block.*
+
+![Early Growth](results/results_10_1/blockchain1.png)
+*Figure 2.2: Early growth of the chain.*
+
+![Fork Formation](results/results_10_1/blockchain2.png)
+*Figure 2.3: A fork occurs at depth 2 and 8.*
+
+![Final Tree Structure](results/results_10_1/blockchain10.png)
+*Figure 2.4: The structure of the tree after 200,000 time steps, showing a dominant main chain and several orphaned side branches.*
+
+### Analysis and Answers to Assignment Questions
+
+1.  **Ratio of blocks in the longest chain to total blocks generated:** My experiments show this ratio is generally high (often >95%) but decreases as the block interval becomes shorter relative to network latency. A shorter block interval increases the chances of concurrent block discoveries, leading to more forks and more orphaned blocks that do not make it into the main chain.
+2.  **Number and length of branches:** The number of forks is inversely related to the block interval. For very low intervals (e.g., 5-10s), numerous small forks of length 1 are common. Longer forks (depth > 1) are rare but can occur. As the block interval increases (e.g., 50-100s), the network has more time to reach consensus on the latest block before a new one is found, drastically reducing the number of forks.
+3.  **Effect of other parameters:** A higher percentage of low-power CPU peers centralizes mining among the few high-power peers, which can paradoxically lead to fewer forks if network latency is low. High network latency (many slow peers/links) is a significant contributor to forks, as it takes longer for a newly mined block to propagate, giving other miners a larger window to find a competing block.
+
+## 1.5. Challenges and Conclusion for Part 1
+
+Implementing the discrete-event simulator was a significant challenge, particularly in managing event timings, debugging race conditions in block propagation, and correctly modeling the "switch-to-longest-chain" mining behavior. The project was a profound learning experience in simulation, P2P systems, and the emergent properties of PoW consensus.
+
+---
+
+# Part 2: Verifiable On-Chain Provenance Tracker (DApp)
+
+*(This part corresponds to the Final Assignment of the project.)*
+
+## 2.1. Objective and Learning Acknowledgement
+
+The objective of this assignment was to build a full-stack decentralized application (DApp) to create a verifiable, tamper-proof record of provenance for unique items, similar to an NFT. This involved writing, testing, and deploying a Solidity smart contract and building a web frontend to interact with it.
+
+**Learning methodology:** As a developer new to the specific tech stack of DApp development (Solidity, `ethers.js`, frontend integration) and facing a tight deadline, I utilized AI-powered tools to generate a baseline for the frontend code. The process was not one of copy-pasting; rather, the generated code served as a scaffold which I then studied, debugged, modified, and "humanized" to ensure I understood every component. The true learning came from this process of deconstructing, understanding, and validating the standard patterns for DApp interaction, such as connecting to MetaMask, querying contract events, and sending transactions.
+
+## 2.2. DApp Components
+*Present in `src/dapp`*
+
+### Smart Contract (`Tracker.sol`)
+A Solidity smart contract was written to serve as the backend logic.
+*   **`Item` Struct:** Stores an item's unique `id`, `name`, current `owner` address, and additional `data` (for enhanced metadata).
+*   **State Management:** Uses a `mapping` to link IDs to `Item` structs and a counter for new item IDs.
+*   **Functions:**
+    *   `registerItem(name, data)`: Creates a new item, assigning the caller (`msg.sender`) as the initial owner.
+    *   `transferOwnership(id, newOwner)`: Allows the current owner of an item to transfer it to a new address.
+    *   `burnItem(id)`: A bonus feature allowing the owner to permanently delete an item's record.
+*   **Events:** Emits `ItemRegistered`, `OwnershipTransferred`, and `ItemBurnt` events. These are indexed to allow for efficient querying by the frontend.
+*   **Security:** Functions include `require` statements to enforce access control (e.g., only the owner can transfer or burn an item).
+
+### Frontend (`index.html`, `style.css`, `script.js`)
+A web interface was built to interact with the deployed smart contract.
+*   **Technology:** Simple HTML and CSS for structure and styling, with JavaScript and the `ethers.js` library for blockchain interaction.
+*   **Features:**
+    1.  **Wallet Connection:** A button allows users to connect their MetaMask wallet.
+    2.  **Item Registration:** A form to call the `registerItem` function.
+    3.  **Item Display:** Fetches and displays all registered items by querying past `ItemRegistered` events from the blockchain.
+    4.  **Ownership Transfer:** An interface for the current owner of an item to transfer it to a new address.
+    5.  **Provenance Viewing:** A feature to view the complete ownership history of any item by fetching and displaying all `OwnershipTransferred` and `ItemRegistered` events associated with its ID.
+    6.  **Burning:** A button for the owner to burn their item.
+
+## 2.3. How to Use the DApp
+
+1.  **Prerequisites:**
+    *   A web browser with the [MetaMask](https://metamask.io/) extension installed.
+    *   Connected to the **Sepolia Test Network** in MetaMask.
+    *   Some Sepolia test ETH (available from a public faucet).
+2.  **Running the Frontend:**
+    *   Clone the repository.
+    *   Open the `src/dapp/index.html` file in your web browser.
+3.  **Interact with the Deployed Contract:**
+    *   **Deployed Contract Address (Sepolia):** `0x3E364004145956Dac1760c5A15FE78fb8E3f6872`
+    *   **Contract on Etherscan:** `https://sepolia.etherscan.io/address/0x3E364004145956Dac1760c5A15FE78fb8E3f6872`
+
+## 2.4. Conclusion for Part 2
+
+This DApp project was a valuable practical exercise in smart contract development and full-stack integration. It provided hands-on experience with Solidity, `ethers.js`, and the event-driven architecture of decentralized applications. While AI tools were used to accelerate the initial frontend development, the process of debugging and understanding the code provided a solid foundation in DApp principles.```
+
+--- FILE: ./__pycache__ ---
+```
+```
+
+--- FILE: ./node_modules ---
+```
+```
+
+--- FILE: ./package-lock.json ---
+```json
+{
+  "name": "Blockchain_arena_SoC_2025",
+  "lockfileVersion": 3,
+  "requires": true,
+  "packages": {
+    "": {
+      "dependencies": {
+        "ethers": "^6.15.0"
+      }
+    },
+    "node_modules/@adraffy/ens-normalize": {
+      "version": "1.10.1",
+      "resolved": "https://registry.npmjs.org/@adraffy/ens-normalize/-/ens-normalize-1.10.1.tgz",
+      "integrity": "sha512-96Z2IP3mYmF1Xg2cDm8f1gWGf/HUVedQ3FMifV4kG/PQ4yEP51xDtRAEfhVNt5f/uzpNkZHwWQuUcu6D6K+Ekw==",
+      "license": "MIT"
+    },
+    "node_modules/@noble/curves": {
+      "version": "1.2.0",
+      "resolved": "https://registry.npmjs.org/@noble/curves/-/curves-1.2.0.tgz",
+      "integrity": "sha512-oYclrNgRaM9SsBUBVbb8M6DTV7ZHRTKugureoYEncY5c65HOmRzvSiTE3y5CYaPYJA/GVkrhXEoF0M3Ya9PMnw==",
+      "license": "MIT",
+      "dependencies": {
+        "@noble/hashes": "1.3.2"
+      },
+      "funding": {
+        "url": "https://paulmillr.com/funding/"
+      }
+    },
+    "node_modules/@noble/hashes": {
+      "version": "1.3.2",
+      "resolved": "https://registry.npmjs.org/@noble/hashes/-/hashes-1.3.2.tgz",
+      "integrity": "sha512-MVC8EAQp7MvEcm30KWENFjgR+Mkmf+D189XJTkFIlwohU5hcBbn1ZkKq7KVTi2Hme3PMGF390DaL52beVrIihQ==",
+      "license": "MIT",
+      "engines": {
+        "node": ">= 16"
+      },
+      "funding": {
+        "url": "https://paulmillr.com/funding/"
+      }
+    },
+    "node_modules/@types/node": {
+      "version": "22.7.5",
+      "resolved": "https://registry.npmjs.org/@types/node/-/node-22.7.5.tgz",
+      "integrity": "sha512-jML7s2NAzMWc//QSJ1a3prpk78cOPchGvXJsC3C6R6PSMoooztvRVQEz89gmBTBY1SPMaqo5teB4uNHPdetShQ==",
+      "license": "MIT",
+      "dependencies": {
+        "undici-types": "~6.19.2"
+      }
+    },
+    "node_modules/aes-js": {
+      "version": "4.0.0-beta.5",
+      "resolved": "https://registry.npmjs.org/aes-js/-/aes-js-4.0.0-beta.5.tgz",
+      "integrity": "sha512-G965FqalsNyrPqgEGON7nIx1e/OVENSgiEIzyC63haUMuvNnwIgIjMs52hlTCKhkBny7A2ORNlfY9Zu+jmGk1Q==",
+      "license": "MIT"
+    },
+    "node_modules/ethers": {
+      "version": "6.15.0",
+      "resolved": "https://registry.npmjs.org/ethers/-/ethers-6.15.0.tgz",
+      "integrity": "sha512-Kf/3ZW54L4UT0pZtsY/rf+EkBU7Qi5nnhonjUb8yTXcxH3cdcWrV2cRyk0Xk/4jK6OoHhxxZHriyhje20If2hQ==",
+      "funding": [
+        {
+          "type": "individual",
+          "url": "https://github.com/sponsors/ethers-io/"
+        },
+        {
+          "type": "individual",
+          "url": "https://www.buymeacoffee.com/ricmoo"
+        }
+      ],
+      "license": "MIT",
+      "dependencies": {
+        "@adraffy/ens-normalize": "1.10.1",
+        "@noble/curves": "1.2.0",
+        "@noble/hashes": "1.3.2",
+        "@types/node": "22.7.5",
+        "aes-js": "4.0.0-beta.5",
+        "tslib": "2.7.0",
+        "ws": "8.17.1"
+      },
+      "engines": {
+        "node": ">=14.0.0"
+      }
+    },
+    "node_modules/tslib": {
+      "version": "2.7.0",
+      "resolved": "https://registry.npmjs.org/tslib/-/tslib-2.7.0.tgz",
+      "integrity": "sha512-gLXCKdN1/j47AiHiOkJN69hJmcbGTHI0ImLmbYLHykhgeN0jVGola9yVjFgzCUklsZQMW55o+dW7IXv3RCXDzA==",
+      "license": "0BSD"
+    },
+    "node_modules/undici-types": {
+      "version": "6.19.8",
+      "resolved": "https://registry.npmjs.org/undici-types/-/undici-types-6.19.8.tgz",
+      "integrity": "sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==",
+      "license": "MIT"
+    },
+    "node_modules/ws": {
+      "version": "8.17.1",
+      "resolved": "https://registry.npmjs.org/ws/-/ws-8.17.1.tgz",
+      "integrity": "sha512-6XQFvXTkbfUOZOKKILFG1PDK2NDQs4azKQl26T0YS5CxqWLgXajbPZ+h4gZekJyRqFU8pvnbAbbs/3TgRPy+GQ==",
+      "license": "MIT",
+      "engines": {
+        "node": ">=10.0.0"
+      },
+      "peerDependencies": {
+        "bufferutil": "^4.0.1",
+        "utf-8-validate": ">=5.0.2"
+      },
+      "peerDependenciesMeta": {
+        "bufferutil": {
+          "optional": true
+        },
+        "utf-8-validate": {
+          "optional": true
+        }
+      }
+    }
+  }
+}
+```
+
+--- FILE: ./package.json ---
+```json
+{
+  "dependencies": {
+    "ethers": "^6.15.0"
+  }
+}
+```
+
+--- FILE: ./run.sh ---
+```bash
+for i in 5 10 50 100
+do
+    for j in 1 5 10
+    do
+        python3 src/simulator/main.py 80 50 50 $i $j F
+    done
+done```
+
+--- FILE: ./src/dapp/Tracker.sol ---
+```solidity
+pragma solidity ^0.8.0;
+
+contract Tracker{
+    struct Item{
+        uint256 id;
+        string name;
+        address owner;
+        string data;
+    }
+
+    uint ctr = 1;
+    mapping(uint256 => Item) public  id_map;
+
+    event ItemRegistered(uint256 indexed id, address indexed owner, string name);
+    event OwnershipTransferred(uint256 indexed id, address indexed from, address indexed to);
+    event ItemBurnt(uint256 indexed id);
+
+    function registerItem(string memory name, string memory data) public {
+        Item memory new_item = Item(ctr, name, msg.sender, data);
+        id_map[ctr] = new_item;
+        emit ItemRegistered(ctr++, msg.sender, name);
+    }
+
+    function transferOwnership(uint256 id, address newOwner) public {
+        require(id_map[id].owner != address(0), "Tracker: Item does not exist.");
+        require(msg.sender == id_map[id].owner, "Tracker: Sender is not the owner of item.");
+        id_map[id].owner = newOwner;
+
+        emit OwnershipTransferred(id, msg.sender, newOwner);
+    }
+
+    function burnItem(uint256 id) public {
+        require(id_map[id].owner != address(0), "Tracker: Item does not exist.");
+        require(msg.sender == id_map[id].owner, "Tracker: Sender is not the owner of item.");
+        delete id_map[id];
+
+        emit ItemBurnt(id);
+    }
+}```
+
+--- FILE: ./src/dapp/index.html ---
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>On-Chain Provenance Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>On-Chain Provenance Tracker</h1>
+        <button id="connect_wallet_btn">Connect Wallet</button>
+        <p id="wallet_address"></p>
+    </header>
+
+    <div id="dapp_interface" class="hidden">
+        
+        <section>
+            <h2>Register New Item</h2>
+            <div class="form_group">
+                <input type="text" id="item_name_input" placeholder="Item Name">
+                <input type="text" id="item_data_input" placeholder="Item Data">
+                <button id="register_item_btn">Register</button>
+            </div>
+        </section>
+
+        <section>
+            <h2>All Registered Items</h2>
+            <p id="loading_items_msg">Loading items from the blockchain...</p>
+            <ul id="item_list">
+                <!--Items to be added here-->
+            </ul>
+        </section>
+
+        <section id="history_section" class="hidden">
+            <h2>Provenance History for Item #<span id="history_item_id"></span></h2>
+            <ul id="provenance_history">
+                <!--History to be added here-->
+            </ul>
+        </section>
+
+    </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js" type="application/javascript"></script>
+        
+        <script src="script.js" defer></script>
+
+    </body>
+</html>```
+
+--- FILE: ./src/dapp/script.js ---
+```javascript
+contractAddress = "0x3E364004145956Dac1760c5A15FE78fb8E3f6872"; 
+
+contractABI = [
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			}
+		],
+		"name": "burnItem",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			}
+		],
+		"name": "ItemBurnt",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
+			}
+		],
+		"name": "ItemRegistered",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			}
+		],
+		"name": "OwnershipTransferred",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "data",
+				"type": "string"
+			}
+		],
+		"name": "registerItem",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "transferOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "id_map",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "data",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+];
+connect_wallet_btn = document.getElementById('connect_wallet_btn');
+wallet_adress_display = document.getElementById('wallet_address');
+dapp_interface = document.getElementById('dapp_interface');
+register_item_btn = document.getElementById('register_item_btn');
+item_name_input = document.getElementById('item_name_input');
+item_data_input = document.getElementById('item_data_input');
+item_list = document.getElementById('item_list');
+loading_items_message = document.getElementById('loading_items_msg');
+history_section = document.getElementById('history_section');
+history_item_id = document.getElementById('history_item_id');
+provenance_history = document.getElementById('provenance_history');
+async function connect_wallet() {
+    if (typeof window.ethereum === 'undefined') {
+        alert("metamask is not installed");
+        return;
+    }
+
+    try {
+        accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+        provider = new ethers.providers.Web3Provider(window.ethereum);
+        signer = provider.getSigner();
+        adress = await signer.getAddress();
+        wallet_adress_display.innerText = `Connected: ${adress.substring(0, 6)}...${adress.substring(adress.length - 4)}`;
+        connect_wallet_btn.disabled = true;
+        connect_wallet_btn.innerText = 'Wallet Connected';
+        dapp_interface.classList.remove('hidden');
+        initialize_dApp();
+    } catch (error) {
+        alert("Error connecting to metamask", error);
+    }
+}
+function initialize_dApp() {
+    contract = new ethers.Contract(contractAddress, contractABI, signer);
+    load_all_items();
+    listen_for_events();
+}
+
+async function load_all_items() {
+    loading_items_message.style.display = 'block';
+    item_list.innerHTML = '';
+    try {
+        itemFilter = contract.filters.ItemRegistered();
+        pastEvents = await contract.queryFilter(itemFilter, 0, 'latest');
+        if(pastEvents.length === 0) {
+             loading_items_message.innerText = "No items registered yet.";
+        } else {
+            loading_items_message.style.display = 'none';
+            for (even of pastEvents) {
+                add_item_to_list(even.args.id, even.args.owner, even.args.name);
+            }
+        }
+    } catch (error) {
+        // console.error("unable to fetch item ", error);
+        loading_items_message.innerText = "Error loading items.";
+    }
+}
+
+function listen_for_events() {
+    contract.on("ItemRegistered", (id, owner, name) => {
+        loading_items_message.style.display = 'none';
+        add_item_to_list(id, owner, name);
+    });
+    contract.on("OwnershipTransferred", (id, from, to) => {
+        alert(`${id.toString()} transferred from ${from} to ${to}`);
+        load_all_items();
+    });
+    contract.on("ItemBurnt", (id) => {
+        console.log(`ItemBurnt event received for ID: ${id.toString()}`);
+        const itemElement = document.getElementById(`item-${id.toString()}`);
+        if (itemElement) {
+            itemElement.remove();
+        }
+    });
+}
+
+async function add_item_to_list(id, owner, name) {
+    li = document.createElement('li');
+    li.id = `item_${id.toString()}`;
+    li.innerHTML = `
+        <strong>${name}</strong> (ID: ${id.toString()})
+        <div class="item-info">Owner: ${owner}</div>
+        <div class="item-actions">
+            <div class="transfer-form">
+                <input type="text" placeholder="New owner address (0x...)" id="transfer-input-${id.toString()}">
+                <button class="action-button" onclick="transferItem('${id.toString()}')">Transfer</button>
+            </div>
+            <div>
+                <button class="action-button" onclick="view_provenance('${id.toString()}')">View History</button>
+                <button class="burn-button" onclick="burnItem('${id.toString()}')">Burn Item</button>
+            </div>
+        </div>
+    `;
+    item_list.prepend(li);
+}
+
+async function register_item() {
+    item_name = item_name_input.value;
+    item_data = item_data_input.value;
+    if (!item_name) {
+        alert("Please enter an item name");
+        return;
+    }
+
+    try {
+        tx = await contract.register_item(item_name, item_data);
+        alert(`Registering "${item_name}"`);
+        await tx.wait();
+        alert(`Successfully registered "${item_name}"`);
+        item_name_input.value = '';
+        item_data_input.value = '';
+    } catch (error) {
+        // console.error("item not registered ", error);
+        alert("Failed to register item");
+    }
+}
+
+async function transfer_item(id_string) {
+    new_owner_adress = document.getElementById(`transfer-input-${id_string}`).value;
+    if (!ethers.utils.isAddress(new_owner_adress)) {
+        alert("invalid address");
+        return;
+    }
+
+    try {
+        tx = await contract.transferOwnership(id_string, new_owner_adress);
+        alert(`Transferring Item #${id_string}`);
+        await tx.wait();
+    } catch (error) {
+        console.error("error transferring item:", error);
+        alert("Failed to transfer item");
+    }
+}
+
+async function view_provenance(idString) {
+    history_section.classList.remove('hidden');
+    history_item_id.innerText = idString;
+    provenance_history.innerHTML = '<li>Loading history...</li>';
+    try {
+        registerFilter = contract.filters.ItemRegistered(idString);
+        transferFilter = contract.filters.OwnershipTransferred(idString);
+        registerEvents = await contract.queryFilter(registerFilter, 0, 'latest');
+        transferEvents = await contract.queryFilter(transferFilter, 0, 'latest');
+        allHistoryEvents = [...registerEvents, ...transferEvents].sort((a,b) => a.blockNumber - b.blockNumber);
+        provenance_history.innerHTML = '';
+        if (allHistoryEvents.length === 0) {
+            provenance_history.innerHTML = '<li>No history found.</li>';
+            return;
+        }
+        
+        allHistoryEvents.forEach(event => {
+            li = document.createElement('li');
+            if (event.event === "ItemRegistered") {
+                li.innerHTML = `<strong>Registered:</strong> Item created and assigned to <div class="item-info">${event.args.owner}</div>`;
+            } else if (event.event === "OwnershipTransferred") {
+                 li.innerHTML = `<strong>Transferred:</strong> From <div class="item_info">${event.args.from}</div> To <div class="item_info">${event.args.to}</div>`;
+            }
+            provenance_history.appendChild(li);
+        });
+    } catch (error) {
+        console.error("error fetching provenance: ", error);
+        provenance_history.innerHTML = '<li> Error fetching history. </li>';
+    }
+}
+
+async function burnItem(idString) {
+    try {
+        const tx = await contract.burnItem(idString);
+        alert(`Burning Item #${idString}.`);
+        await tx.wait();
+        alert(`Item #${idString} has been successfully burned.`);
+    } catch (error) {
+        alert("Failed to burn item.");
+    }
+}
+
+connect_wallet_btn.addEventListener('click', connect_wallet);
+register_item_btn.addEventListener('click', register_item);```
+
+--- FILE: ./src/dapp/style.css ---
+```css
+body {
+    font-family: 'bahnschrift';
+    background-color: beige;
+    color: #000000;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #fff;
+    padding: 15px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+header h1 {
+    margin: 0;
+    display: flex;
+    font-size: 1.5em;
+    color: tomato;
+}
+
+section {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    margin-top: 0;
+    border-bottom: 2px solid grey;
+    border-right: 2px solid grey;
+    padding-bottom: 10px;
+    color: tomato;
+}
+
+h2 {
+    margin-top: 0;
+    display: flex;
+    border-bottom: 1px solid grey;
+    padding-bottom: 10px;
+    color: lightslategray;
+}
+
+.form-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid grey;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: coral;
+    border: solid tomato;
+    color: whitesmoke;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    border: solid darkred;
+    background-color: tomato;
+}
+
+/* Item List Styling */
+#itemList, #provenance_history {
+    list-style-type: none;
+    padding: 0;
+}
+
+#itemList li, #provenance_history li {
+    background-color: lightgray;
+    border: 1px solid grey;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.item_info, .history_info {
+    font-size: 0.9em;
+    color: grey;
+    word-break: break-all;
+}
+
+.transfer_form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.transfer_form input {
+    width: 300px;
+}
+
+.item-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.action-button {
+    background-color: darkgray;
+    border: solid grey;
+}
+.action-button:hover {
+    background-color: grey;
+}
+
+.burn-button {
+    background-color: red;
+    border: solid darkred;
+}
+.burn-button:hover {
+    background-color: darkred;
+}```
+
+--- FILE: ./src/simulator/chain.py ---
+```python
+from collections import deque
+import matplotlib.pyplot as plt
+import networkx as nx
+import copy
+from settings import SCALE
+
+
+class Transaction:
+
+    def __init__(self, sender: int | None, reciever: int, value: int) -> None:
+        self.ID: int = id(self)
+        self.sender_ID: int | None = sender
+        self.reciever_ID: int = reciever
+        self.amount: int = value
+
+    def __str__(self) -> str:
+        return f'{self.ID}: {self.sender_ID} pays {self.reciever_ID} {self.amount} coins'  # Noqa:E501
+
+
+class Block:
+
+    def __init__(self, creator: str | int, baseID: int | None = None) -> None:
+        self.ID = id(self)
+        self.last_block_ID = baseID
+        self.creator = creator
+        self.transaction_list = []
+
+
+class TreeNode:
+
+    def __init__(self, block, depth) -> None:
+        self.next = []
+        self.block: Block = block
+        self.depth: int = depth
+        self.accounts = {}
+
+    def __str__(self) -> str:
+        return f'{self.depth} by {self.block.creator}'
+
+
+class BlockTree:
+
+    def __init__(self, genesis_block: Block, peer_id: int) -> None:
+        self.peer_id = peer_id
+        self.root = TreeNode(genesis_block, 0)
+        self.node_list = [self.root]
+
+    def find_node_by_ID(self, ID) -> TreeNode | None:
+        to_scan_stack = deque()
+        to_scan_stack.append(self.root)
+        while len(to_scan_stack) != 0:
+            node_to_search = to_scan_stack.pop()
+            if node_to_search.block.ID == ID:
+                return node_to_search
+            for node in node_to_search.next:
+                to_scan_stack.append(node)
+        return None
+
+    def add_block(self, block: Block) -> bool:
+        found_node = self.find_node_by_ID(block.last_block_ID)
+        if found_node is None or block in found_node.next:
+            return False
+        if self.validate_transactions(block, found_node):
+            new_node = TreeNode(block, found_node.depth+1)
+            new_node.accounts = copy.deepcopy(found_node.accounts)
+            account = new_node.accounts
+            for transaction in block.transaction_list:
+                if transaction.reciever_ID not in account:
+                    account[transaction.reciever_ID] = 0
+                if transaction.sender_ID is not None:
+                    account[transaction.sender_ID] -= transaction.amount
+                account[transaction.reciever_ID] += transaction.amount
+            found_node.next.append(new_node)
+            self.node_list.append(new_node)
+            return True
+        return False
+
+    def find_longest_chain(self):
+        max_depth_node = self.root
+        for i in self.node_list:
+            if max_depth_node.depth < i.depth:
+                max_depth_node = i
+        return max_depth_node
+
+    def validate_transactions(self, block: Block, last_node: TreeNode) -> bool:
+        accounts = last_node.accounts
+        for transaction in block.transaction_list:
+            if transaction.sender_ID is None:
+                return True
+            if transaction.sender_ID not in accounts:
+                return False
+            if accounts[transaction.sender_ID] - transaction.amount < 0:
+                return False
+        return True
+
+    def draw(self, time: int, result_folder: str, plot_idx: int) -> None:
+        graph = nx.Graph()
+        cmap = []
+        for node in self.node_list:
+            graph.add_node(node)
+            if node.depth == 0:
+                cmap.append('red')
+            else:
+                cmap.append('lightblue')
+        draw_stack = deque()
+        draw_stack.append(self.root)
+        while len(draw_stack) != 0:
+            root = draw_stack.pop()
+            for node in root.next:
+                graph.add_edge(root, node)
+                draw_stack.append(node)
+        plt.figure(figsize=(8, 8), dpi=600)
+        plt.title(
+            f'Block chain Tree for peer {self.peer_id} at timestep {time/SCALE}'  # Noqa:E501
+        )
+        nx.draw(
+            graph,
+            pos=nx.spring_layout(graph, iterations=100),
+            with_labels=True,
+            node_size=max(300-graph.number_of_nodes()*5, 30),
+            font_size=max(8-int(graph.number_of_nodes()/15), 4),
+            node_color=cmap,
+        )
+        plt.savefig(result_folder+f'/blockchain{plot_idx}.png')
+        plt.close()
+```
+
+--- FILE: ./src/simulator/main.py ---
+```python
+import sys
+import queue
+import enum
+import os
+from network import Network
+from chain import Block, Transaction
+from peer import Peer, CPUPower, NetworkSpeed
+from settings import MAX_TIME_STEPS, max_num_peers, min_num_peers
+
+
+class EventType(enum.Enum):
+    BLOCK_SEND = 0
+    BLOCK_RECIEVE = 1
+    TRANSACTION_SEND = 2
+    TRANSACTION_RECIEVE = 3
+
+
+class Event:
+
+    def __init__(
+        self,
+        type: EventType,
+        peer: Peer,
+        message: Block | Transaction,
+        time: int
+    ) -> None:
+        self.event_type = type
+        self.peer = peer
+        self.message = message
+        self.time = time
+
+
+class DiscreteEventSimulator:
+
+    def __init__(
+        self,
+        num_peers: int,
+        slow_network_perc: int,
+        low_cpu_perc: int,
+        interval: int,
+        transaction_mean: int,
+        logging: bool,
+    ) -> None:
+        self.num_peers: int = num_peers
+        self.network: Network = Network(
+            self.num_peers,
+            slow_network_perc/100,
+            low_cpu_perc/100,
+            interval,
+            transaction_mean,
+        )
+        self.logging = logging
+        self.interval = interval
+        self.transaction_mean = transaction_mean
+        self.time: int = 0
+        self.event_queue = queue.Queue()
+        self.result_folder_name = f'results/results_{self.interval}_{self.transaction_mean}'  # Noqa:E501
+        if not os.path.exists(self.result_folder_name):
+            os.mkdir(self.result_folder_name)
+
+        if self.logging:
+            self.log_filename = self.result_folder_name+'/log.csv'
+            header = 'SimTime,ScheduledEventTime,EventType,PeerID,HighCPUPower,FastNetwork,MessageType,MessageID,MessageCreator,MessageTxCount\n'  # Noqa:E501
+            self.log = ''
+
+            with open(self.log_filename, 'w', newline='') as f:
+                f.write(header)
+
+        self.network.draw()
+
+    def run_simulation(self) -> None:
+        plot_idx: int = 0
+        while True:
+            if self.time % (MAX_TIME_STEPS/10) == 0:
+                print(f'Processing for time {self.time}/{MAX_TIME_STEPS}')
+                list(self.network.graph.nodes())[0].block_tree.draw(
+                    self.time,
+                    f'results/results_{self.interval}_{self.transaction_mean}',
+                    plot_idx
+                )
+                plot_idx += 1
+            if self.logging:
+                if self.time % 200 == 0:
+                    with open(self.log_filename, 'a') as f:
+                        f.write(self.log)
+                        self.log = ''
+            if self.time >= MAX_TIME_STEPS:
+                break
+            future_event_queue = queue.Queue()
+            for peer in self.network.graph.nodes():
+                peer: Peer
+                block: None | Block = peer.validate_block_operation()
+                if block is not None:
+                    self.add_event_to_queue(
+                        Event(EventType.BLOCK_SEND, peer, block, self.time)
+                    )
+                transaction = peer.validate_transaction_operation(
+                    self.num_peers
+                )
+                if transaction is not None:
+                    self.add_event_to_queue(
+                        Event(
+                            EventType.TRANSACTION_SEND,
+                            peer,
+                            transaction,
+                            self.time
+                        )
+                    )
+            while not self.event_queue.empty():
+                event: Event = self.event_queue.get()
+                if event.time <= self.time:
+                    match event.event_type:
+                        case EventType.BLOCK_SEND:
+                            if type(event.message) is Block:
+                                self.send_block(event.message, event.peer)
+                        case EventType.BLOCK_RECIEVE:
+                            if event.message.ID not in event.peer.read_block_IDs:  # Noqa:E501
+                                if event.peer.add_block(event.message):
+                                    self.add_event_to_queue(
+                                        Event(
+                                            EventType.BLOCK_SEND,
+                                            event.peer,
+                                            event.message,
+                                            self.time
+                                        )
+                                    )
+                        case EventType.TRANSACTION_SEND:
+                            if type(event.message) is Transaction:
+                                self.send_transaction(
+                                    event.message,
+                                    event.peer
+                                )
+                        case EventType.TRANSACTION_RECIEVE:
+                            if type(event.message) is Transaction:
+                                self.recieve_transaction(
+                                    event.message,
+                                    event.peer
+                                )
+
+                else:
+                    future_event_queue.put(event)
+            self.time += 1
+            self.event_queue = future_event_queue
+
+    def recieve_transaction(self, transaction: Transaction, peer: Peer) -> None:  # Noqa:E501
+        if transaction.ID not in peer.read_transaction_IDs:
+            peer.read_transaction_IDs.add(transaction.ID)
+            peer.to_process_transactions.append(transaction)
+            self.add_event_to_queue(
+                Event(
+                    EventType.TRANSACTION_SEND,
+                    peer,
+                    transaction,
+                    self.time,
+                )
+            )
+
+    def send_transaction(self, transaction: Transaction, peer: Peer) -> None:
+        for reciever in self.network.graph.neighbors(peer):
+            latency: int = int(self.network.calculate_lataecy_for_message(
+                (peer, reciever),
+                1
+            ))
+            self.add_event_to_queue(
+                Event(
+                    EventType.TRANSACTION_RECIEVE,
+                    reciever,
+                    transaction,
+                    self.time + latency,
+                )
+            )
+
+    def send_block(self, block: Block, peer: Peer) -> None:
+        message_size: int = len(block.transaction_list)+1
+        for reciever in self.network.graph.neighbors(peer):
+            latency: int = int(self.network.calculate_lataecy_for_message(
+                (peer, reciever),
+                message_size,
+            ))
+            self.add_event_to_queue(
+                Event(
+                    EventType.BLOCK_RECIEVE,
+                    reciever,
+                    block,
+                    self.time + latency
+                )
+            )
+
+    def add_event_to_queue(self, event: Event) -> None:
+        self.event_queue.put(
+            event
+        )
+        if self.logging:
+            self.log += log_formatting(
+                event,
+                self.time,
+            )
+
+
+def log_formatting(event: Event, time: int) -> str:
+    log = ''
+    log += str(time)
+    log += ','
+    log += str(event.time)
+    log += ','
+    match event.event_type:
+        case EventType.BLOCK_RECIEVE:
+            log += 'block_recieve'
+        case EventType.BLOCK_SEND:
+            log += 'block_send'
+        case EventType.TRANSACTION_RECIEVE:
+            log += 'transaction_recieve'
+        case EventType.TRANSACTION_SEND:
+            log += 'transaction_recieve'
+    log += ','
+    log += str(event.peer)
+    log += ','
+    if event.peer.cpu_power == CPUPower.HIGH:
+        log += str(1)
+    else:
+        log += str(0)
+    log += ','
+    if event.peer.network_speed == NetworkSpeed.FAST:
+        log += str(1)
+    else:
+        log += str(0)
+    log += ','
+    log += str(type(event.message))
+    log += ','
+    log += str(event.message.ID)
+    log += ','
+    if type(event.message) is Block:
+        log += str(event.message.creator)
+    elif type(event.message) is Transaction:
+        log += str(event.message.sender_ID)
+    if type(event.message) is Block:
+        log += str(len(event.message.transaction_list))
+    else:
+        log += str(1)
+    return log+'\n'
+
+
+def take_input() -> tuple[int, int, int, int, int, bool]:
+    try:
+        num_peers, slow_network_perc, low_cpu_perc, interval, transaction_mean, logging = sys.argv[1:]  # Noqa:E501
+    except ValueError:
+        print('''Usage: python3 main.py arg1 arg2 arg3 arg4
+    arg1 : number of peers in network
+    arg2 : percentage of peers with slow network
+    arg3 : percentage of peers with low CPU power
+    arg4 : mean interval for block mining
+    arg5 : mean interval for transaction mining
+    arg6 : logging(T/F)''')
+        sys.exit()
+
+    try:
+        num_peers = int(num_peers)
+        slow_network_perc = int(slow_network_perc)
+        low_cpu_perc = int(low_cpu_perc)
+        interval = int(interval)
+        transaction_mean = int(transaction_mean)
+        logging = logging.upper()
+    except ValueError:
+        print('Error: Command line arguments must be integers')
+        sys.exit()
+
+    if not min_num_peers <= num_peers <= max_num_peers:
+        print(f'Error: Command line argument 1 (num of peers) must lie in [{min_num_peers}, {max_num_peers}]')  # Noqa:E501
+        sys.exit()
+
+    if not 0 <= slow_network_perc <= 100:
+        print('Error: Command line argument 2 (percentage of slow network peers) must lie in [0, 100]')  # Noqa:E501
+        sys.exit()
+
+    if not 0 <= low_cpu_perc <= 100:
+        print('Error: Command line argument 3 (percentage of low CPU power peers) must lie in [0, 100]')  # Noqa:E501
+        sys.exit()
+
+    if not interval > 0:
+        print('Error: Command line argument 4 (mean mining interval time) must be positive')  # Noqa:E501
+        sys.exit()
+
+    if not interval > 0:
+        print('Error: Command line argument 5 (mean transaction interval time) must be positive')  # Noqa:E501
+        sys.exit()
+
+    match logging:
+        case 'T':
+            logging = True
+        case 'F':
+            logging = False
+        case _:
+            print('Error: Command line argument 6 (logging(T/F)) must be either \'T\' or \'F\'')  # Noqa:E501
+            sys.exit()
+
+    return (
+        num_peers,
+        slow_network_perc,
+        low_cpu_perc,
+        interval,
+        transaction_mean,
+        logging,
+    )
+
+
+DiscreteEventSimulator(*take_input()).run_simulation()
+```
+
+--- FILE: ./src/simulator/network.py ---
+```python
+import matplotlib.pyplot as plt
+from matplotlib.offsetbox import AnchoredText
+import networkx as nx
+import numpy as np
+import random
+import enum
+from peer import Peer, CPUPower, NetworkSpeed
+from chain import Block
+from settings import SCALE, max_degree, min_degree
+
+
+class LatencyTerms(enum.Enum):
+    PROPOGATION_DELAY = 0
+    MESSAGE = 1
+    LINK_SPEED = 2
+    QUEUING_DELAY = 3
+
+
+class Network:
+
+    def __init__(
+        self,
+        num_peers: int,
+        slow_network_frac: float,
+        weak_cpu_frac: float,
+        interval: int,
+        transaction_mean: int
+    ) -> None:
+
+        # will be used to decide how frequent should higher degree be
+        self.extra_edge_fraction = 0.01
+        self.graph = nx.Graph()
+        self.num_peers = num_peers
+        self.peer_list: list[Peer] = []
+        self.genesis_block = Block('Genesis')
+        self.interval = interval
+        self.transaction_mean = transaction_mean
+
+        # adds all the nodes to graph
+        high_power_ctr = 0
+        for i in range(self.num_peers):
+
+            if random.random() < weak_cpu_frac:
+                cpu_power = CPUPower.LOW
+            else:
+                cpu_power = CPUPower.HIGH
+                high_power_ctr += 1
+
+            if random.random() < slow_network_frac:
+                network_speed = NetworkSpeed.SLOW
+            else:
+                network_speed = NetworkSpeed.FAST
+
+            self.peer_list.append(
+                Peer(
+                    i,
+                    cpu_power,
+                    network_speed,
+                    self.genesis_block,
+                    self.interval,
+                    self.transaction_mean,
+                )
+            )
+            self.graph.add_node(self.peer_list[-1])
+
+        for peer in self.peer_list:
+            if peer.cpu_power == CPUPower.HIGH:
+                peer.set_hashing_power(10/(9*high_power_ctr + num_peers))
+            else:
+                peer.set_hashing_power(1/(9*high_power_ctr + num_peers))
+
+        # generates the edges until requirements are not met
+        self.generate_edges()
+        while not self.check_graph():
+            self.graph.clear_edges()
+            self.generate_edges()
+
+        self.initialize_latency()
+
+    def generate_edges(self):
+        '''
+        Assigns edges to the graph based on given degree constraints
+        '''
+        # First generate a back bone of connected edges between entire graph
+        nodes = list(self.graph.nodes)
+        random.shuffle(nodes)
+        for i in range(self.num_peers-1):
+            self.graph.add_edge(nodes[i], nodes[i+1])
+
+        # Nodes with degree < min_degree ie of high priority
+        # it is effectively nodes that need to get more edges
+        unsatisfied = list(self.graph.nodes)
+        # Nodes with degree < max_degree ie of low priority
+        # it is effectively nodes that can get more edges but are satisfied
+        satisfied = []
+        # Keeps adding edges until all unsatisfied nodes are not finished
+        while len(unsatisfied) != 0:
+
+            # always select an unsatisfied edge
+            from_node = random.choice(unsatisfied)
+
+            # choose second unsatisfied if availible
+            if len(unsatisfied) != 0:
+                to_node = random.choice(unsatisfied)
+
+            if len(satisfied) != 0:
+                # if satisfied is available
+                # use probability to decide (un)satisfied node
+                if (
+                    random.random() > self.extra_edge_fraction
+                    or
+                    len(unsatisfied) == 0
+                ):
+                    to_node = random.choice(satisfied)
+
+            # if both selected are same retry
+            if to_node == from_node:
+                continue
+
+            self.graph.add_edge(from_node, to_node)
+
+            if self.graph.degree(from_node) >= min_degree:  # type:ignore
+                unsatisfied.remove(from_node)
+                satisfied.append(from_node)
+
+            # locate the to node based on list it is in
+            if to_node in unsatisfied:
+
+                if self.graph.degree(to_node) >= min_degree:  # type:ignore
+                    unsatisfied.remove(to_node)
+                    satisfied.append(to_node)
+
+            elif self.graph.degree(to_node) >= max_degree:  # type:ignore
+                satisfied.remove(to_node)
+
+    def check_graph(self) -> bool:
+        '''
+        Checks if the graph meets all requirements
+        '''
+        return nx.is_connected(self.graph) and self.degree_check()
+
+    def degree_check(self) -> bool:
+        '''
+        Checks the degree of all nodes
+        '''
+        print("Checking degree")
+        for _, degree in self.graph.degree:  # type:ignore
+            if not min_degree <= degree <= max_degree:
+                print("Graph failed degree check")
+                return False
+        print("Graph passes degree check")
+        return True
+
+    def initialize_latency(self) -> None:
+        for edge in self.graph.edges():
+            dic = self.graph.edges[edge]
+            if edge[0].network_speed.value + edge[1].network_speed.value == 2:
+                dic[LatencyTerms.LINK_SPEED] = 100
+            else:
+                dic[LatencyTerms.LINK_SPEED] = 5
+            dic[LatencyTerms.PROPOGATION_DELAY] = random.randrange(10, 500)
+
+    def calculate_lataecy_for_message(self, edge, message_size):
+        link_speed = self.graph.edges[edge][LatencyTerms.LINK_SPEED] * 1000000
+        queuing_delay = np.random.poisson(96000/link_speed)
+        latency = self.graph.edges[edge][LatencyTerms.PROPOGATION_DELAY]/1000
+        latency += message_size*8000/link_speed
+        latency += queuing_delay
+        return latency*SCALE
+
+    def draw(self) -> None:
+        '''
+        Draws the graph and saves it
+        '''
+        x = [self.graph.degree(node) for node in self.graph.nodes]  # type:ignore # Noqa:E501
+        s = [0 for _ in range(max_degree - min_degree + 1)]
+        color_map = []
+        width_list = []
+        edge_list = []
+        for edge in self.graph.edges():
+            fast1 = edge[0].network_speed == NetworkSpeed.FAST
+            fast2 = edge[1].network_speed == NetworkSpeed.FAST
+            if fast1 and fast2:
+                width_list.append(3)
+            else:
+                width_list.append(1)
+        for node in self.graph.nodes():
+            if node.cpu_power == CPUPower.HIGH:
+                color_map.append('red')
+            else:
+                color_map.append('blue')
+            if node.network_speed == NetworkSpeed.FAST:
+                edge_list.append(3)
+            else:
+                edge_list.append(1)
+        for i in x:
+            s[i-min_degree] += 1
+        for i in range(max_degree - min_degree + 1):
+            print(f"Percentage of {i + min_degree} is {s[i]/sum(s) * 100}")
+
+        plt.figure(figsize=(8, 8), dpi=300)
+        ax = plt.subplot()
+        ax.set_title('Peer Network', size=24)
+        text = '''
+Red Node: High CPU power
+Blue Node: Low CPU power
+Thick outline node: High network speed
+Thin outline node: Low network speed
+Thick line: High speed connection
+'''
+        box = AnchoredText(text, loc='lower right', frameon=True, pad=0.5)
+        ax.add_artist(box)
+        nx.draw(
+            self.graph,
+            pos=nx.spring_layout(self.graph),
+            with_labels=True,
+            width=width_list,
+            linewidths=edge_list,
+            edgecolors='black',
+            font_size=10,
+            font_color='white',
+            node_color=color_map,
+        )
+        plt.tight_layout()
+        plt.savefig(f'results/results_{self.interval}_{self.transaction_mean}/network.png')  # Noqa:E501
+        plt.close()
+```
+
+--- FILE: ./src/simulator/peer.py ---
+```python
+import enum
+from chain import Block, BlockTree, Transaction
+import numpy
+import random
+from settings import SCALE, MINING_FEE
+
+
+class CPUPower(enum.Enum):
+    LOW = 0
+    HIGH = 1
+
+
+class NetworkSpeed(enum.Enum):
+    SLOW = 0
+    FAST = 1
+
+
+class Peer:
+
+    def __init__(
+        self,
+        id,
+        cpu_power,
+        network_speed,
+        genesis_block,
+        interval,
+        transaction_mean
+    ) -> None:
+        self.id = id
+        self.interval_time = interval
+        self.transaction_mean = transaction_mean
+        self.cpu_power = cpu_power
+        self.network_speed = network_speed
+        self.block_tree = BlockTree(genesis_block, self.id)
+        self.hashing_fraction = 0
+        self.money = 0
+        self.read_transaction_IDs = set()
+        self.to_process_transactions = []
+        self.read_block_IDs = set()
+        self.block_to_push: None | Block = None
+        self.push_in: None | int = None
+        self.push_from = None
+        self.transact = None
+        self.new_transaction: None | Transaction = None
+
+    def generate_block(self) -> None:
+        point_of_adding = self.block_tree.find_longest_chain()
+        generated_block = Block(self.id, point_of_adding.block.ID)
+        ctr = 0
+        for transaction in self.to_process_transactions:
+            if transaction.sender_ID in point_of_adding.accounts:
+                present_money = point_of_adding.accounts[transaction.sender_ID]
+                if present_money >= transaction.amount:
+                    generated_block.transaction_list.append(transaction)
+                    self.to_process_transactions.remove(transaction)
+                    ctr += 1
+                    if ctr == 1000:
+                        break
+        generated_block.transaction_list.append(
+            Transaction(None, self.id, MINING_FEE)
+        )
+        time = numpy.random.poisson(
+            self.interval_time*SCALE/self.hashing_fraction
+        )
+        self.push_in = time
+        self.block_to_push = generated_block
+        self.push_from = point_of_adding
+
+    def validate_block_operation(self) -> None | Block:
+        if (self.push_in is None or self.block_tree.find_longest_chain() != self.push_from):  # Noqa:E501
+            self.generate_block()
+        else:
+            self.push_in -= 1
+        if self.push_in is not None and self.push_in <= 0:
+            if self.block_to_push is not None:
+                self.read_block_IDs.add(self.block_to_push.ID)
+            self.money += MINING_FEE
+            self.add_block(self.block_to_push)
+            ready_block = self.block_to_push
+            self.generate_block()
+            return ready_block
+        return None
+
+    def generate_transaction(self, num_peers) -> None:
+        if self.money > 0:
+            time = numpy.random.poisson(self.transaction_mean*SCALE)
+            self.transact = time
+            pay_to = random.randint(0, num_peers-1)
+            while pay_to == self.id:
+                pay_to = random.randint(0, num_peers-1)
+            self.new_transaction = Transaction(
+                self.id,
+                pay_to,
+                numpy.random.randint(1, self.money+1)
+            )
+            self.money -= self.new_transaction.amount
+
+    def validate_transaction_operation(self, num_peers) -> Transaction | None:
+        if self.transact is None:
+            self.generate_transaction(num_peers)
+        else:
+            self.transact -= 1
+            if self.transact <= 0:
+                if self.new_transaction is not None:
+                    self.to_process_transactions.append(self.new_transaction)
+                    self.read_transaction_IDs.add(self.new_transaction.ID)
+                ready_transaction = self.new_transaction
+                self.generate_transaction(num_peers)
+                return ready_transaction
+        return None
+
+    def set_hashing_power(self, h_k) -> None:
+        self.hashing_fraction = h_k
+
+    def __str__(self) -> str:
+        return str(self.id)
+
+    def add_block(self, block) -> bool:
+        self.read_block_IDs.add(block.ID)
+        return self.block_tree.add_block(block)
+```
+
+--- FILE: ./src/simulator/settings.py ---
+```python
+min_num_peers = 50
+max_num_peers = 100
+
+min_degree = 3
+max_degree = 6
+
+MAX_TIME_STEPS = 200000
+
+SCALE = 10
+
+MINING_FEE = 50
+```

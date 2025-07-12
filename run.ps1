@@ -5,6 +5,6 @@ foreach ($i in 5, 10, 50, 100) {
             mkdir $directoryName
         }
         Write-Host "Running simulation for average block mining interval=$i, transaction mean time =$j in directory $directoryName"
-        python3 src/main.py 80 50 50 $i $j F
+        python3 src/simulator/main.py 80 50 50 $i $j F
     }
 }
