@@ -117,7 +117,7 @@ A sample simulation was run with the following parameters:
 
 1.  **P2P Network Topology:**
     *   The generated P2P network (Figure 1) shows a connected graph with the specified peer heterogeneity. Nodes are colored based on CPU power, and outline thickness indicates network speed, while edge thickness indicates link capacity.
-    ![network](https://github.com/Aadeshveer/Blockchain_arena_SoC_2025/blob/main/results_10_1/network.png) 
+    ![network](https://github.com/Aadeshveer/Blockchain_arena_SoC_2025/blob/main/results/results_10_1/network.png) 
     *Figure 1: Sample P2P Network Topology (60 peers, 50% slow network, 50% low CPU).*
 
 2.  **Blockchain Tree Evolution (Peer 0):**
@@ -127,27 +127,27 @@ A sample simulation was run with the following parameters:
     *   **Fork Resolution (Longest Chain Rule):** The simulation demonstrates peers adopting the longest valid chain they are aware of. Over time, one chain typically becomes dominant, and branches that were temporarily extended become stale/orphaned from the perspective of peers on the new longest chain. (Example: Figure 2.3 showing a previously shorter branch now being the longest, or a significant orphan branch).
     *   **Structure of the Final Tree:** The final observed tree for Peer 0 often shows a clear main chain with several smaller, orphaned side branches of varying lengths. This reflects the probabilistic nature of PoW mining and network propagation delays. (Example: Figure 2.11 - your final tree image).
 
-    ![blockchain0](https://github.com/Aadeshveer/Blockchain_arena_SoC_2025/blob/main/results_10_1/blockchain0.png) 
+    ![blockchain0](https://github.com/Aadeshveer/Blockchain_arena_SoC_2025/blob/main/results/results_10_1/blockchain0.png) 
     *Figure 2.1: Initial blockchain for peer 0*
-    ![blockchain1](https://github.com/Aadeshveer/Blockchain_arena_SoC_2025/blob/main/results_10_1/blockchain1.png) 
+    ![blockchain1](https://github.com/Aadeshveer/Blockchain_arena_SoC_2025/blob/main/results/results_10_1/blockchain1.png) 
     *Figure 2.2:  blockchain for peer 0*
-    ![blockchain2](https://github.com/Aadeshveer/Blockchain_arena_SoC_2025/blob/main/results_10_1/blockchain2.png) 
+    ![blockchain2](https://github.com/Aadeshveer/Blockchain_arena_SoC_2025/blob/main/results/results_10_1/blockchain2.png) 
     *Figure 2.3:  blockchain for peer 0*
-    ![blockchain3](https://github.com/Aadeshveer/Blockchain_arena_SoC_2025/blob/main/results_10_1/blockchain3.png) 
+    ![blockchain3](https://github.com/Aadeshveer/Blockchain_arena_SoC_2025/blob/main/results/results_10_1/blockchain3.png) 
     *Figure 2.4:  blockchain for peer 0*
-    ![blockchain4](https://github.com/Aadeshveer/Blockchain_arena_SoC_2025/blob/main/results_10_1/blockchain4.png) 
+    ![blockchain4](https://github.com/Aadeshveer/Blockchain_arena_SoC_2025/blob/main/results/results_10_1/blockchain4.png) 
     *Figure 2.5:  blockchain for peer 0*
-    ![blockchain5](https://github.com/Aadeshveer/Blockchain_arena_SoC_2025/blob/main/results_10_1/blockchain5.png) 
+    ![blockchain5](https://github.com/Aadeshveer/Blockchain_arena_SoC_2025/blob/main/results/results_10_1/blockchain5.png) 
     *Figure 2.6:  blockchain for peer 0*
-    ![blockchain6](https://github.com/Aadeshveer/Blockchain_arena_SoC_2025/blob/main/results_10_1/blockchain6.png) 
+    ![blockchain6](https://github.com/Aadeshveer/Blockchain_arena_SoC_2025/blob/main/results/results_10_1/blockchain6.png) 
     *Figure 2.7:  blockchain for peer 0*
-    ![blockchain7](https://github.com/Aadeshveer/Blockchain_arena_SoC_2025/blob/main/results_10_1/blockchain7.png) 
+    ![blockchain7](https://github.com/Aadeshveer/Blockchain_arena_SoC_2025/blob/main/results/results_10_1/blockchain7.png) 
     *Figure 2.8:  blockchain for peer 0*
-    ![blockchain8](https://github.com/Aadeshveer/Blockchain_arena_SoC_2025/blob/main/results_10_1/blockchain8.png) 
+    ![blockchain8](https://github.com/Aadeshveer/Blockchain_arena_SoC_2025/blob/main/results/results_10_1/blockchain8.png) 
     *Figure 2.9:  blockchain for peer 0*
-    ![blockchain9](https://github.com/Aadeshveer/Blockchain_arena_SoC_2025/blob/main/results_10_1/blockchain9.png) 
+    ![blockchain9](https://github.com/Aadeshveer/Blockchain_arena_SoC_2025/blob/main/results/results_10_1/blockchain9.png) 
     *Figure 2.10:  blockchain for peer 0*
-    ![blockchain10](https://github.com/Aadeshveer/Blockchain_arena_SoC_2025/blob/main/results_10_1/blockchain10.png) 
+    ![blockchain10](https://github.com/Aadeshveer/Blockchain_arena_SoC_2025/blob/main/results/results_10_1/blockchain10.png) 
     *Figure 2.11:  blockchain for peer 0*
 
 

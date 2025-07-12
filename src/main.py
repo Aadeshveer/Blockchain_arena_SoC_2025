@@ -54,7 +54,7 @@ class DiscreteEventSimulator:
         self.transaction_mean = transaction_mean
         self.time: int = 0
         self.event_queue = queue.Queue()
-        self.result_folder_name = f'results_{self.interval}_{self.transaction_mean}'  # Noqa:E501
+        self.result_folder_name = f'results/results_{self.interval}_{self.transaction_mean}'  # Noqa:E501
         if not os.path.exists(self.result_folder_name):
             os.mkdir(self.result_folder_name)
 
@@ -75,7 +75,7 @@ class DiscreteEventSimulator:
                 print(f'Processing for time {self.time}/{MAX_TIME_STEPS}')
                 list(self.network.graph.nodes())[0].block_tree.draw(
                     self.time,
-                    f'results_{self.interval}_{self.transaction_mean}',
+                    f'results/results_{self.interval}_{self.transaction_mean}',
                     plot_idx
                 )
                 plot_idx += 1

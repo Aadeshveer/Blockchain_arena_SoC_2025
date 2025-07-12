@@ -222,5 +222,5 @@ Thick line: High speed connection
             node_color=color_map,
         )
         plt.tight_layout()
-        plt.savefig(f'results_{self.interval}_{self.transaction_mean}/network.png')  # Noqa:E501
+        plt.savefig(f'results/results_{self.interval}_{self.transaction_mean}/network.png')  # Noqa:E501
         plt.close()
